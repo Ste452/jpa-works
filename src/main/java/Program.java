@@ -13,6 +13,12 @@ public class Program {
 		
 		Person p = em.find(Person.class, 2);
 		
+		em.getTransaction().begin();
+		
+		em.remove(p);
+		
+		em.getTransaction().commit();
+		
 		System.out.println(p);
 		
 		System.out.println("Now is ready");
